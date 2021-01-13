@@ -1,0 +1,13 @@
+node_modules/
+
+build/
+
+tmp/
+!tmp/.gitkeep
+
+# Arqvuios para não serem carregados que são gerados ao executar o comando yarn
+.env
+package-lock.json
+yarn.lock
+yarn-error.log
+ormconfig.dev.json
