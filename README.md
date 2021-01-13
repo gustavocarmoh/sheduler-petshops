@@ -50,7 +50,7 @@ Obs.: Estámos em processo de construção.
   "id": "3060c3a5-f5b1-4e45-91b0-0f6a4c4a99cd"
 }
 ```
--- **`POST /users/avatar`**: Está rota é responsavel pela inserção/update do avatar do usuario, deve receber um `avatar`.
+- **`POST /users/avatar`**: Está rota é responsavel pela inserção/update do avatar do usuario, deve receber um `avatar`.
 
 
 ## :memo: Licença
