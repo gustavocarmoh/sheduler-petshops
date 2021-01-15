@@ -2,7 +2,7 @@
 
 **RF**
 
-- O usuário deve poder recuperar sua senha infnormando o seu e-mail;
+- [x] O usuário deve poder recuperar sua senha infnormando o seu e-mail;
 - O usuário deve recebber um e-mail com instruções de recuperação de senha;
 - O usuário deve poder resetar sua senha;
 
