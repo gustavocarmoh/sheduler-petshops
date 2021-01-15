@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import 'reflect-metadata';
@@ -17,7 +19,7 @@ app.disabled('x-powered-by');
 
 app.use(helmet);
 app.use(express.json());
-app.use('/files', express.static(uploadConfig.tmpFolder));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
