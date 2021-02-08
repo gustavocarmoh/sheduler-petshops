@@ -1,4 +1,4 @@
-FROM Ubuntu:20.0.4
+FROM ubuntu:20.0.4
 
 EXPOSE 3333
 
