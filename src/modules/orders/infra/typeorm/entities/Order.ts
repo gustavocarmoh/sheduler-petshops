@@ -8,7 +8,7 @@ import {
   OneToMany,
 } from 'typeorm';
 
-import Customer from '@modules/customers/infra/typeorm/entities/Customer';
+import User from '@modules/users/infra/typeorm/entities/User';
 import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
 
 @Entity('orders')
@@ -16,9 +16,9 @@ class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Customer, { eager: true })
-  @JoinColumn({ name: 'customer_id', referencedColumnName: 'id' })
-  customer: Customer;
+  @ManyToOne(() => User, { eager: true })
+  @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
+  user: User;
 
   @OneToMany(() => OrdersProducts, ordersProducts => ordersProducts.order, {
     cascade: true,

@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 
 import IProductsRepository from '@modules/products/repositories/IProductsRepository';
-import ICustomersRepository from '@modules/customers/repositories/ICustomersRepository';
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import Order from '../infra/typeorm/entities/Order';
 import IOrdersRepository from '../repositories/IOrdersRepository';
 
@@ -13,7 +13,7 @@ interface IProduct {
 }
 
 interface IRequest {
-  customer_id: string;
+  user_id: string;
   products: IProduct[];
 }
 
@@ -26,14 +26,14 @@ class CreateProductService {
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
 
-    @inject('CustomersRepository')
-    private customersRepository: ICustomersRepository,
+    @inject('UserssRepository')
+    private usersRepository: IUsersRepository,
   ) {}
 
-  public async execute({ customer_id, products }: IRequest): Promise<Order> {
-    const checkCustomer = await this.customersRepository.findById(customer_id);
-    if (!checkCustomer) {
-      throw new AppError('Invalid Customer ID');
+  public async execute({ user_id, products }: IRequest): Promise<Order> {
+    const checkUser = await this.usersRepository.findById(user_id);
+    if (!checkUser) {
+      throw new AppError('Invalid User ID');
     }
 
     const searchedProduct = await this.productsRepository.findAllById(products);
@@ -69,7 +69,7 @@ class CreateProductService {
     });
 
     const order = await this.ordersRepository.create({
-      customer: checkCustomer,
+      customer: checkUser,
       products: productsInOrder,
     });
 
