@@ -2,9 +2,9 @@
   "type": "postgres",
 	"host": "localhost",
   "port": 5432,
-  "username": "postgres",
-  "password": "docker",
-  "database": "gostack_gobarber",
+  "username": "Apolo",
+  "password": "AZ49hd6i!!",
+  "database": "petshop",
   "entities": [
 		"./src/modules/**/infra/typeorm/entities/*.ts"
 	],

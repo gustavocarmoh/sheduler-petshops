@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 
 services:
   redis:
@@ -8,6 +8,16 @@ services:
   postgress:
     image: postgres:alpine
     ports:
-      - '5432:5432'
+      - 5432:5432
     environment:
+      POSTGRES_USER: Apolo
       POSTGRES_PASSWORD: AZ49hd6i!!
+      POSTGRES_DB: petshop
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mitred
+      MONGO_INITDB_ROOT_PASSWORD: AZ49hd7i!!
