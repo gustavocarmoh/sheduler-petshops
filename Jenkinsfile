@@ -1,7 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+
+  }
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh 'npm i'
       }
