@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('error') {
+    stage('') {
       steps {
-        sh 'npm i'
+        sh 'npm install'
       }
     }
 
