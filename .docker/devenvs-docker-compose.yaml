@@ -1,0 +1,71 @@
+services:
+  backend:
+    build:
+      context: \\wsl.localhost\Debian\home\mitred\workspace\nodejs\sheduler-petshops
+      dockerfile: \\wsl.localhost\Debian\home\mitred\workspace\nodejs\sheduler-petshops\Dockerfile
+    labels:
+      com.docker.devenvironments.compose: "true"
+      com.docker.devenvironments.compose.build: "true"
+      com.docker.devenvironments.name: sheduler-petshops-naughty_stonebraker
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 3333
+      protocol: tcp
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: AZ49hd7i!!
+      MONGO_INITDB_ROOT_USERNAME: mitred
+    image: mongo
+    labels:
+      com.docker.devenvironments.compose: "true"
+      com.docker.devenvironments.name: sheduler-petshops-naughty_stonebraker
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: 27017
+      protocol: tcp
+    restart: always
+  postgres:
+    environment:
+      POSTGRES_DB: petshop
+      POSTGRES_PASSWORD: AZ49hd6i!!
+      POSTGRES_USER: Apolo
+    image: postgres:alpine
+    labels:
+      com.docker.devenvironments.compose: "true"
+      com.docker.devenvironments.name: sheduler-petshops-naughty_stonebraker
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 5432
+      published: 5432
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: db-data
+      target: /var/lib/postgresql/data
+      volume: {}
+  redis:
+    image: redis:5.0-alpine
+    labels:
+      com.docker.devenvironments.compose: "true"
+      com.docker.devenvironments.name: sheduler-petshops-naughty_stonebraker
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: 6379
+      protocol: tcp
+networks:
+  default:
+    name: sheduler-petshops-naughty_stonebraker_default
+volumes:
+  db-data:
+    name: sheduler-petshops-naughty_stonebraker_db-data

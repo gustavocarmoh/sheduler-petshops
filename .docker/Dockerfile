@@ -1,10 +1,10 @@
-FROM ubuntu:20.0.4
-
-RUN MKDIR -p /app
+FROM node:16-alpine
 
 WORKDIR /app
 
 COPY . /app/
+
+RUN npm install typescript -g
 
 RUN npm install --production
 RUN npm run build
