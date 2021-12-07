@@ -24,7 +24,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: mitred
       MONGO_INITDB_ROOT_PASSWORD: AZ49hd7i!!
   backend:
-    build: ./
+    build: .
     depends_on:
       - postgress
       - redis
