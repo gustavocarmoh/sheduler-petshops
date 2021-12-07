@@ -2,7 +2,7 @@ version: "3.7"
 services:
   backend:
     build:
-      context: ../
+      context: ./
       target: production
     depends_on:
       - redis
