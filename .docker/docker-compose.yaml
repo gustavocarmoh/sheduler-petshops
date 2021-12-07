@@ -22,6 +22,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: mitred
       MONGO_INITDB_ROOT_PASSWORD: AZ49hd7i!!
   backend:
-    build: .
+    build: ./
     ports:
       - 3333:80
