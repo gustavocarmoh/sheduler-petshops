@@ -22,9 +22,5 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: mitred
       MONGO_INITDB_ROOT_PASSWORD: AZ49hd7i!!
-  backend:
-    build: ./
-    ports:
-      - 3333:80
 volumes:
   db-data:
