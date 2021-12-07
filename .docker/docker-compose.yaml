@@ -1,11 +1,10 @@
 version: "3.7"
-
 services:
   redis:
     image: redis:5.0-alpine
     ports:
       - 6379:6379
-  postgress:
+  postgres:
     image: postgres:alpine
     ports:
       - 5432:5432
@@ -13,6 +12,8 @@ services:
       POSTGRES_USER: Apolo
       POSTGRES_PASSWORD: AZ49hd6i!!
       POSTGRES_DB: petshop
+    volumes:
+      - db-data:/var/lib/postgresql/data
   mongo:
     image: mongo
     restart: always
@@ -25,3 +26,5 @@ services:
     build: ./
     ports:
       - 3333:80
+volumes:
+  db-data:
