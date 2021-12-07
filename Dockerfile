@@ -6,8 +6,8 @@ COPY . /app/
 
 RUN npm install typescript -g
 
-RUN npm install --production
-RUN npm run build
+RUN npm i
+#RUN npm run build
 
 EXPOSE 3333
-CMD ["npm", "start"]
+ENTRYPOINT ["npm", "run", "dev:server"]
