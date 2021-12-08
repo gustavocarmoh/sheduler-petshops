@@ -31,12 +31,10 @@ RUN npm i
 # RUN npm run typeorm migration:run
 
 FROM build AS dev
+EXPOSE 3333
 ENTRYPOINT ["npm", "run", "dev:server"]
 
 FROM alpine:3.12
-
-EXPOSE 3333
-
 COPY --from=build /app /server
 
-CMD ["/server"]
+CMD ["cd","/server"]
