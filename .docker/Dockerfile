@@ -28,4 +28,6 @@ RUN npm install typescript -g
 RUN npm i
 #RUN npm run build
 
+RUN npm run typeorm migration:run
+
 ENTRYPOINT ["npm", "run", "dev:server"]
