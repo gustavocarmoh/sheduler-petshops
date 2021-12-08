@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16-alpine AS build
 
 # Application
 ENV APP_SECRET=
@@ -21,7 +21,7 @@ ENV REDIS_PASS=
 
 WORKDIR /app
 
-COPY . /app/
+COPY . .
 
 RUN npm install typescript -g
 
@@ -30,5 +30,13 @@ RUN npm i
 
 # RUN npm run typeorm migration:run
 
-EXPOSE 3333
+FROM build AS dev
 ENTRYPOINT ["npm", "run", "dev:server"]
+
+FROM alpine:3.12
+
+EXPOSE 3333
+
+COPY --from=build /app /server
+
+CMD ["/server"]
