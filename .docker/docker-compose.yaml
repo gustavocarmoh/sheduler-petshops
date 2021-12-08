@@ -6,18 +6,16 @@ services:
       - redis
       - postgres
       - mongo
-    links:
-      - mongo
-      - postgres
-      - redis
      post:
       - 3333:80
   redis:
     image: redis:5.0-alpine
+    restart: always
     ports:
       - 6379:6379
   postgres:
     image: postgres:alpine
+    restart: always
     ports:
       - 5432:5432
     environment:
