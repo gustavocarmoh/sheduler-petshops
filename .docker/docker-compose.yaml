@@ -6,8 +6,6 @@ services:
       - redis
       - postgres
       - mongo
-     ports:
-      - 3333:80
   redis:
     image: redis:5.0-alpine
     restart: always
