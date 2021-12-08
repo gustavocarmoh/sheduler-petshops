@@ -2,8 +2,6 @@ version: "3.7"
 services:
   backend:
     build: .
-    ports:
-      - 3333:80
     depends_on:
       - redis
       - postgres
