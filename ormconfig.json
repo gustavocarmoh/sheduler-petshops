@@ -1,6 +1,6 @@
 {
   "type": "postgres",
-	"host": "localhost",
+	"host": "backend",
   "port": 5432,
   "username": "Apolo",
   "password": "AZ49hd6i!!",
