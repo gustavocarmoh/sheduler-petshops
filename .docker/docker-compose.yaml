@@ -6,6 +6,12 @@ services:
       - redis
       - postgres
       - mongo
+    links:
+      - mongo
+      - postgres
+      - redis
+     post:
+      - 3333:80
   redis:
     image: redis:5.0-alpine
     ports:
