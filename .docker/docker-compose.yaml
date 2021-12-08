@@ -8,7 +8,6 @@ services:
       - mongo
      links:
       - redis
-      - postgres
       - mongo
   redis:
     image: redis:5.0-alpine
@@ -18,6 +17,8 @@ services:
   postgres:
     image: postgres:alpine
     restart: always
+    links:
+      - backend
     ports:
       - 5432:5432
     environment:
