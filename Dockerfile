@@ -31,4 +31,4 @@ RUN npm i
 # RUN npm run typeorm migration:run
 
 EXPOSE 3333
-# ENTRYPOINT ["npm", "run", "dev:server"]
+ENTRYPOINT ["npm", "run", "dev:server"]
