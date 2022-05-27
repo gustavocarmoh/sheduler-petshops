@@ -58,3 +58,5 @@ Obs.: Estámos em processo de construção.
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 kadsf
+
+Arquivo Editado.
